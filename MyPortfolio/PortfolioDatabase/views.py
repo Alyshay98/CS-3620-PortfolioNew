@@ -7,6 +7,10 @@ def home(request):
     return render(request, 'PortfolioDatabase/home.html')
 
 
+def about(request):
+    return render(request, 'PortfolioDatabase/about.html')
+
+
 def hobbies(request):
     hobbies_list = Hobby.objects.all()
     return render(request, 'PortfolioDatabase/hobbies.html', {"hobbies_list": hobbies_list})

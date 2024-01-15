@@ -1,0 +1,13 @@
+{% extends 'PortfolioDatabase/base.html' %}
+{% block title %}{{ portfolio.name }} Detail{% endblock %}
+
+{% block content %}
+    <h1>My Portfolio Details</h1>
+        <div class = "row">
+            <div class="col-md-4">
+                <h1>{{ project.name }}</h1>
+                <p>{{ project.description }}</p>
+                <img class="card" height="150px" src="{{ portfolio.image.url }}" alt="{{ portfolio.name }} Image">
+            </div>
+        </div>
+{% endblock %}
