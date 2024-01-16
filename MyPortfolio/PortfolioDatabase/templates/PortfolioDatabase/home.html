@@ -1,8 +1,56 @@
 {% extends 'PortfolioDatabase/base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1>Welcome to My Portfolio</h1>
+    <div class="row">
+        <div class="offset-md-4">
+            <h1>Welcome to My Portfolio</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Here you can learn a little <a href="{% url 'about' %}">About Me</a> and see some of the projects I've worked on that I am most proud of.</p>
+        </div>
+        <div class="col-md-3">
+            <p>When you're ready to you can check out my <a href="{% url 'hobbies' %}">Hobbies</a> to see what activities I like to participate in!</p>
+        </div>
+        <div class="col-md-3">
+            <p>While you're at it, don't forget to check out some of my <a href="{% url 'portfolio' %}">examples</a> of work that I have worked hard on for the last few years.</p>
+        </div>
+        <div class="col-md-3">
+            <p>If you have questions, feel free to <a href="{% url 'contact' %}">contact</a> me and I will be glad to answer any questions you may have.</p>
+        </div>
+    </div>
 
+    <!-- Add a new row for the photo collage -->
+    <div class="row mt-4">
+        <!-- Add your images here using the img tag -->
+        <div class="col-md-3">
+            <img src="{% static 'Images/Shanen.jpg' %}" alt="Shanen" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/Shanen1.jpg' %}" alt="Shanen1" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/Horseback.jpg' %}" alt="Horseback" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/Tent.jpg' %}" alt="Tent" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/dArt.jpg' %}" alt="Diamond Art" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/Horseback1.jpg' %}" alt="War Bonnet Queen on Horseback" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/War_Bonnet.jpg' %}" alt="War Bonnet" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'Images/War_Bonnet1.jpg' %}" alt="War Bonnet Horsemanship" class="img-fluid mx-auto d-block">
+        </div>
+        <!-- Add more image columns as needed -->
+    </div>
 {% endblock %}

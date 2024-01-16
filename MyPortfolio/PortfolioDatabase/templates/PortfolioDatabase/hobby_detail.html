@@ -2,12 +2,12 @@
 {% block title %}{{ hobby.name }} Detail{% endblock %}
 
 {% block content %}
-    <h1>My Hobbies</h1>
         <div class = "row">
             <div class="col-md-4">
                 <h1>{{ hobby.name }}</h1>
                 <p>{{ hobby.description }}</p>
                 <img class="card" height="150px" src="{{ hobby.image.url }}" alt="{{ hobby.name }} Image">
+                <a class="btn btn-primary mt-3" href="{% url 'hobbies' %}">Back to Hobbies</a>
             </div>
         </div>
 {% endblock %}
