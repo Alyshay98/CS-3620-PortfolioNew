@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <h1>{{ hobby.name }}</h1>
                 <p>{{ hobby.description }}</p>
-                <img class="card" height="150px" src="{{ hobby.image.url }}" alt="{{ hobby.name }} Image">
+                <img class="card img-fluid mx-auto d-block" height="150px" src="{{ hobby.image.url }}" alt="{{ hobby.name }} Image">
                 <a class="btn btn-primary mt-3" href="{% url 'hobbies' %}">Back to Hobbies</a>
             </div>
         </div>
