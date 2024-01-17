@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Hobby, Portfolio
-from users.forms import ContactForm, PortfolioForm
+from PortfolioDatabase.forms import ContactForm, PortfolioForm
 
 
 # Create your views here.
@@ -50,3 +50,35 @@ def hobby_detail(request, hobby_id):
 def portfolio_detail(request, portfolio_id):
     project = get_object_or_404(Portfolio, pk=portfolio_id)
     return render(request, 'PortfolioDatabase/portfolio_detail.html', {'project': project})
+
+
+def create_portfolio(request):
+    form = PortfolioForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
+    return render(request, 'PortfolioDatabase/item-form.html', {'form': form})
+
+
+def update_portfolio(request, uid):
+    portfolio = Portfolio.objects.all(id=uid)
+    form = PortfolioForm(request.POST or None, instance=portfolio)
+
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
+    return render(request, 'PortfolioDatabase/item-form.html', {'form': form, 'portfolio': portfolio})
+
+
+def delete_portfolio(request, did):
+    portfolio = Portfolio.objects.all(id=did)
+
+
+    if request.method == 'POST':
+        portfolio.delete()
+        return redirect('home')
+
+    return render(request, 'PortfolioDatabase/item-delete.html', {'portfolio': portfolio})
