@@ -1,5 +1,5 @@
 from django import forms
-from .models import Contact, Portfolio
+from PortfolioDatabase.models import Contact, Portfolio
 
 
 class ContactForm(forms.ModelForm):

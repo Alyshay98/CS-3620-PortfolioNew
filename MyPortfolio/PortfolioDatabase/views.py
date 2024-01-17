@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Hobby, Portfolio
-from .forms import ContactForm, PortfolioForm
+from users.forms import ContactForm, PortfolioForm
 
 
 # Create your views here.
