@@ -66,9 +66,10 @@ def update_portfolio(request, id):
     portfolio = Portfolio.objects.get(id=id)
     form = PortfolioForm(request.POST or None, instance=portfolio)
 
-    if form.is_valid():
-        form.save()
-        return redirect('home')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
     return render(request, 'PortfolioDatabase/item-form.html', {'form': form, 'portfolio': portfolio})
 

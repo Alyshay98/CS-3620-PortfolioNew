@@ -8,11 +8,14 @@
         <div class = "row">
             <div class="col-md-4">
                 <h3>{{ hobby.name }}</h3>
-            <p>{{ hobby.description }}</p>
+                <p>{{ hobby.description }}</p>
             </div>
-        </div>
-        <div class="col-md-2">
-            <a href="{% url 'hobby_detail' hobby.id  %}" class="btn btn-success">Details</a>
+
+            <div class="col-md-2">
+                <div class="text-center">
+                    <a href="{% url 'hobby_detail' hobby.id  %}" class="btn btn-success">Details</a>
+                </div>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
