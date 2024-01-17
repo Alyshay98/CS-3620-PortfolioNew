@@ -62,8 +62,8 @@ def create_portfolio(request):
     return render(request, 'PortfolioDatabase/item-form.html', {'form': form})
 
 
-def update_portfolio(request, uid):
-    portfolio = Portfolio.objects.all(id=uid)
+def update_portfolio(request, id):
+    portfolio = Portfolio.objects.get(id=id)
     form = PortfolioForm(request.POST or None, instance=portfolio)
 
     if form.is_valid():
@@ -73,10 +73,8 @@ def update_portfolio(request, uid):
     return render(request, 'PortfolioDatabase/item-form.html', {'form': form, 'portfolio': portfolio})
 
 
-def delete_portfolio(request, did):
-    portfolio = Portfolio.objects.all(id=did)
-
-
+def delete_portfolio(request, id):
+    portfolio = Portfolio.objects.get(id=id)
     if request.method == 'POST':
         portfolio.delete()
         return redirect('home')
