@@ -11,7 +11,7 @@ def register(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             messages.success(request, f'Welcome {username}! Your account is created.')
-            return redirect('PortfolioDatabase:home')
+            return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'users/register.html', {'form': form})

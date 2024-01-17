@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from users import views as user_views
 
+
 urlpatterns = [
     path('', home, name='home'),
     path('about/', about, name='about'),
