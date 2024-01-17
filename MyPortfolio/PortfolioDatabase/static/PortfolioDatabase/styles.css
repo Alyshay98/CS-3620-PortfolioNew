@@ -1,0 +1,74 @@
+.text-white {
+    color: white;
+}
+
+.dg-gray {
+    background-color: gray;
+}
+
+.border-dashed {
+    border: 1px dashed black;
+}
+
+.box-shadow {
+    box-shadow: 2px 2px 5px mediumpurple;
+}
+
+.font-large {
+    font-size: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hover-scale {
+    transition: transform 0.3s;
+}
+.hover-scale:hover {
+    transform: scale(1.1);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rounded-image {
+    border-radius: 10px;
+}
+
+.opacity-half {
+    opacity: 0.5;
+}
+
+.underline-hover:hover {
+    text-decoration: underline;
+}
+
+.margin-responsive {
+    margin: 10px;
+    @media (min-width: 768px) {
+        margin: 20px;
+    }
+}
+
+.transition-bg {
+    transition: background-color 0.5s ease-in-out;
+}
+.transition-bg:hover {
+    background-color: #f2f2f2;
+}
+
+.custom-list {
+    list-style-type: none;
+    padding: 0;
+}

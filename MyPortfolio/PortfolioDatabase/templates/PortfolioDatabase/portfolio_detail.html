@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <h1>{{ project.name }}</h1>
                 <p>{{ project.description }}</p>
-                <img class="card" height="150px" src="{{ portfolio.image.url }}" alt="{{ portfolio.name }} Image">
+                <img class="card" height="150px" width="1000px" src="{{ project.image.url }}" alt="{{ project.name }} Image">
                 <a class="btn btn-primary mt-3" href="{% url 'portfolio' %}">Back to Portfolio</a>
             </div>
         </div>
