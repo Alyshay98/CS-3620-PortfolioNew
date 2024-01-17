@@ -75,6 +75,7 @@ def update_portfolio(request, id):
 
 def delete_portfolio(request, id):
     portfolio = Portfolio.objects.get(id=id)
+
     if request.method == 'POST':
         portfolio.delete()
         return redirect('home')
