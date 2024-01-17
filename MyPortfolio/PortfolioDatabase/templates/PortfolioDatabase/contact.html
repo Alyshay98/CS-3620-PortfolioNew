@@ -1,8 +1,12 @@
 {% extends 'PortfolioDatabase/base.html' %}
 
-{% block title %}Contact Me{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
     <h1>Contact Me</h1>
-    <p>Email: blairwillows98@gmail.com</p>
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 {% endblock %}
