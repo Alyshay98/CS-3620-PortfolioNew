@@ -2,12 +2,20 @@
 {% block title %}{{ hobby.name }} Detail{% endblock %}
 
 {% block content %}
-        <div class = "row">
-            <div class="col-md-4">
-                <h1>{{ hobby.name }}</h1>
-                <p>{{ hobby.description }}</p>
-                <img class="card img-fluid mx-auto d-block" height="150px" src="{{ hobby.image.url }}" alt="{{ hobby.name }} Image">
-                <a class="btn btn-primary mt-3" href="{% url 'hobbies' %}">Back to Hobbies</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card mt-5">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">{{ hobby.name }}</h1>
+                        <p class="card-text">{{ hobby.description }}</p>
+                        <div class="card mt-5" style="background-color: #f8f9fa;">
+                            <img class="card-img-top img-fluid mx-auto d-block" src="{{ hobby.image.url }}" alt="{{ hobby.name }} Image">
+                        </div>
+                        <a class="btn btn-primary mt-3" href="{% url 'hobbies' %}">Back to Hobbies</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 {% endblock %}

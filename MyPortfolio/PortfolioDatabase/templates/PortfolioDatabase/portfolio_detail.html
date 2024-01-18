@@ -2,12 +2,20 @@
 {% block title %}{{ portfolio.name }} Detail{% endblock %}
 
 {% block content %}
-        <div class = "row">
-            <div class="col-md-4">
-                <h1>{{ project.name }}</h1>
-                <p>{{ project.description }}</p>
-                <img class="card" height="150px" width="1000px" src="{{ project.image.url }}" alt="{{ project.name }} Image">
-                <a class="btn btn-primary mt-3" href="{% url 'portfolio' %}">Back to Portfolio</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card mt-5">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">{{ project.name }}</h1>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div class="card mt-5" style="background-color: #f8f9fa;">
+                            <img class="card-img-top img-fluid mx-auto d-block" src="{{ project.image.url }}" alt="{{ project.name }} Image">
+                        </div>
+                        <a class="btn btn-secondary mt-3" href="{% url 'portfolio' %}">Back to Portfolio</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 {% endblock %}

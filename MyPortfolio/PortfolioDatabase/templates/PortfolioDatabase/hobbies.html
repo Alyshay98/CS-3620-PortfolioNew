@@ -3,21 +3,24 @@
 {% block title %}My Hobbies{% endblock %}
 
 {% block content %}
-    <h1>My Hobbies</h1>
-    {% for hobby in hobbies_list %}
-        <div class = "row">
-            <div class="col-md-4">
-                <h3>{{ hobby.name }}</h3>
-                <p>{{ hobby.description }}</p>
-            </div>
-
-            {% if user.is_authenticated %}
-            <div class="col-md-2">
-                <div class="text-center">
-                    <a href="{% url 'hobby_detail' hobby.id  %}" class="btn btn-primary">Details</a>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-4">My Hobbies</h1>
+        {% for hobby in hobbies_list %}
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3>{{ hobby.name }}</h3>
+                            <p>{{ hobby.description }}</p>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="card-footer text-center">
+                            <a href="{% url 'hobby_detail' hobby.id %}" class="btn btn-primary">Details</a>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            {% endif %}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}
