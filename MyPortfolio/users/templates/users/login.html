@@ -1,0 +1,12 @@
+{% extends 'PortfolioDatabase/base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+
+    <h1> Need to register? Click Here</h1>
+    <a class="btn btn-primary mt-3" href="{% url 'register' %}">Register</a>
+{% endblock %}

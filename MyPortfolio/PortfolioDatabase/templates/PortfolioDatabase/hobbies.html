@@ -11,11 +11,13 @@
                 <p>{{ hobby.description }}</p>
             </div>
 
+            {% if user.is_authenticated %}
             <div class="col-md-2">
                 <div class="text-center">
-                    <a href="{% url 'hobby_detail' hobby.id  %}" class="btn btn-success">Details</a>
+                    <a href="{% url 'hobby_detail' hobby.id  %}" class="btn btn-primary">Details</a>
                 </div>
             </div>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
